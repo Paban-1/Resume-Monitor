@@ -62,15 +62,15 @@ const interviewReportSchema = {
             items: {
                 type: "OBJECT",
                 properties: {
-                    question: { 
+                    question: {
                         type: "STRING",
                         description: "A specific deep technical question tailored to the candidate and role. Not generic."
                     },
-                    intention: { 
+                    intention: {
                         type: "STRING",
                         description: "2-3 sentences explaining exactly what the interviewer is trying to assess."
                     },
-                    answer: { 
+                    answer: {
                         type: "STRING",
                         description: "Comprehensive answer guide with frameworks, key points, and examples."
                     }
@@ -84,15 +84,15 @@ const interviewReportSchema = {
             items: {
                 type: "OBJECT",
                 properties: {
-                    question: { 
+                    question: {
                         type: "STRING",
                         description: "STAR-method behavioral question tailored to the candidate."
                     },
-                    intention: { 
+                    intention: {
                         type: "STRING",
                         description: "2-3 sentences explaining what trait the interviewer is uncovering."
                     },
-                    answer: { 
+                    answer: {
                         type: "STRING",
                         description: "Detailed STAR answer guide with specific points and red flags to avoid."
                     }
@@ -106,16 +106,16 @@ const interviewReportSchema = {
             items: {
                 type: "OBJECT",
                 properties: {
-                    skill: { 
+                    skill: {
                         type: "STRING",
                         description: "The specific missing or weak skill."
                     },
-                    severity: { 
+                    severity: {
                         type: "STRING",
                         enum: ["low", "medium", "high"],
                         description: "high = hard requirement missing, medium = preferred missing, low = nice-to-have missing."
                     },
-                    context: { 
+                    context: {
                         type: "STRING",
                         description: "2-3 sentences on why this gap matters for this role and whether it is bridgeable."
                     }
@@ -129,11 +129,11 @@ const interviewReportSchema = {
             items: {
                 type: "OBJECT",
                 properties: {
-                    day: { 
+                    day: {
                         type: "NUMBER",
                         description: "Day number starting from 1."
                     },
-                    focus: { 
+                    focus: {
                         type: "STRING",
                         description: "Main theme of the day e.g. Java Spring Boot Fundamentals."
                     },
@@ -193,7 +193,8 @@ Generate a complete professional interview preparation report.`
     // console.log(JSON.stringify(report, null, 2))
     // return parsed
     const parsed = JSON.parse(response.text)
-console.log(JSON.stringify(parsed, null, 2))
+    // console.log(JSON.stringify(parsed, null, 2))
+    return parsed
 }
 
 module.exports = generateInterviewReport
