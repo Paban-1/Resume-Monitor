@@ -82,11 +82,15 @@ const interviewReportSchema = new Schema({
     technicalQuestions: [technicalQuestionSchema],   // ✅ plural
     behavioralQuestions: [behavioralQuestionSchema], // ✅ plural
     skillGaps: [skillGapSchema],
-    preparationPlan: [preparationPlanSchema]         // ✅ added
+    preparationPlan: [preparationPlanSchema],         // ✅ added
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+    }
 }, {
     timestamps: true
 })
 
-const InterviewReport = mongoose.model("InterviewReport", interviewReportSchema)
+const InterviewReportModel = mongoose.model("InterviewReport", interviewReportSchema)
 
-module.exports = InterviewReport
+module.exports = InterviewReportModel
