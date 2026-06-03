@@ -10,7 +10,7 @@ async function generateInterviewReportController(req, res) {
 
     const interReportByAi = await generateInterviewReport({ resume: resumeContent, selfDescription, jobDescription })
 
-    const interviewReport = await InterviewReportModel({
+    const interviewReport = await InterviewReportModel.create({
         user: req.user.id,
         resume: resumeContent.text,
         selfDescription,
