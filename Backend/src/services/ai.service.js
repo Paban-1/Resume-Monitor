@@ -49,6 +49,10 @@ const ai = new GoogleGenAI({
 const interviewReportSchema = {
     type: "OBJECT",
     properties: {
+        title: {
+            type: "STRING",
+            description: "Title of the interview report, e.g. 'Senior Java Developer Interview Preparation Report'"
+        },
         matchScore: {
             type: "NUMBER",
             description: "A score between 0 and 100 indicating how well the candidate matches the job description. Be precise and critical."
@@ -185,7 +189,7 @@ Generate a complete professional interview preparation report.`
         }
     })
 
-   
+
     const parsed = JSON.parse(response.text)
     return parsed
 }
