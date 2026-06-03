@@ -1,0 +1,111 @@
+// Color Variables (Dark Theme)
+$bg-main: #0d0d0d;
+$border-color: #333333;
+$text-primary: #ffffff;
+$text-secondary: #aaaaaa;
+$badge-bg: #1a1a1a;
+$badge-border: #444444;
+
+// Main Wrapper Layout
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: $bg-main;
+  color: $text-primary;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-index;
+
+  // Global resets for children inside the dashboard
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// 1. Left Sidebar
+.sidebar-left {
+  flex: 1; 
+  max-width: 280px;
+  border-right: 1px solid $border-color;
+  padding: 40px 24px;
+
+  .nav-list {
+    list-style: none;
+
+    .nav-item {
+      margin-bottom: 20px;
+
+      .nav-button {
+        background: none;
+        border: none;
+        color: $text-secondary;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: left;
+        width: 100%;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $text-primary;
+        }
+
+        &.active {
+          color: $text-primary;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// 2. Middle Content Area
+.content-middle {
+  flex: 2;
+  padding: 40px;
+  overflow-y: auto;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+}
+
+// 3. Right Sidebar
+.sidebar-right {
+  flex: 1;
+  max-width: 320px;
+  border-left: 1px solid $border-color;
+  padding: 40px 24px;
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $text-primary;
+    margin-bottom: 20px;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .skill-badge {
+      background-color: $badge-bg;
+      color: $text-primary;
+      border: 1px solid $badge-border;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+
+      &:hover {
+        background-color: lighten($badge-bg, 5%);
+        border-color: lighten($badge-border, 15%);
+      }
+    }
+  }
+}
